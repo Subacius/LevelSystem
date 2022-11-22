@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75150a08e48b8594abfd86f0aa96fcfe, type: 3}
+  m_Name: Player1
+  m_EditorClassIdentifier: 
+  nameString: Player1
+  prefab: {fileID: 316057771121734332, guid: bf5219cf3bff41a41b55c40f5fd1cd7e, type: 3}
+  sprite: {fileID: 21300000, guid: 9bb5fb5eb02a9be4f93a61ecca7c5002, type: 3}
+  healthAmountMax: 157
+  healthAmountTest: 27
+  hitMax: 25
+  constructionResourceCostArray:
+  - resourceType: {fileID: 11400000, guid: e69bcb4c69ae6f94ca772b2487ff7fbf, type: 2}
+    amount: 50
+  - resourceType: {fileID: 11400000, guid: fc793868043b8db479691913cc814c36, type: 2}
+    amount: 75

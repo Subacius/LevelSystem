@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab70eb7059d605c4d90257c1939dd67b, type: 3}
+  m_Name: Enemy2
+  m_EditorClassIdentifier: 
+  nameString: Enemy2
+  prefab: {fileID: 3802166623530651316, guid: 7395c469f2659464181f0fb542ca1f78, type: 3}
+  healthAmountMax: 55
+  hitMax: 25
