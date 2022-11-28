@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
 
     private LevelSystem levelSystem;
 
+    private WeaponEnemy weaponEnemy;
+
 
     [SerializeField] private GameObject particalEffectsEnemy1;
 
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour
     private void Start() {
         enemyType = GetComponent<EnemyTypeHolder>().enemyType;
         healthSystem = GetComponent<HealthSystem>();
+        weaponEnemy = GetComponent<WeaponEnemy>();
 
 
         // healthSystem.SetHealthAmountMax(enemyType.healthAmountMax, true);
@@ -49,7 +52,10 @@ public class Enemy : MonoBehaviour
         // SetHealthAmountMax(healthSystem.GetHealthAmount() + 11);
         // Debug.Log(healthSystem.GetComponent<HealthSystem>().healthAmount);
         // int healthAmountMax = healthSystem.GetHealthAmount() + 4;
-        healthSystem.SetHealthAmount(healthSystem.healthAmountMax + 4);
+        healthSystem.SetHealthAmountMax(healthSystem.healthAmountMax + 4);
+        Debug.Log("HitMax" + enemyType.hitMax);
+        enemyType.SethitMax(enemyType.hitMax + 2);
+        Debug.Log("HitMax" + enemyType.hitMax);
         Debug.Log("HealthAmount: " + healthSystem.GetComponent<HealthSystem>().GetHealthAmount());
         Debug.Log("HealthAmountMax: " + healthSystem.GetComponent<HealthSystem>().GetHealthAmountMax());
         transform.Find("pfHealthBar").GetComponent<HealthBar>().UpdateBar();
@@ -59,6 +65,10 @@ public class Enemy : MonoBehaviour
     private void Update() {
         if (Input.GetKeyDown(KeyCode.U)){
             healthSystem.Damage(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.X)){
+            weaponEnemy.Shoot();
         }
     }
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {

@@ -11,4 +11,8 @@ public class EnemyTypeSO : ScriptableObject
     public int healthAmountMax;
 
     public int hitMax;
+
+    public void SethitMax (int hitMax) {
+        this.hitMax = hitMax;
+    }
 }

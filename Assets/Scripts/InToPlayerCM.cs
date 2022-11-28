@@ -32,6 +32,8 @@ public class InToPlayerCM : MonoBehaviour
     private GameObject pfPlayerSecond;
 
     [SerializeField] private EnemyTypeSO enemy1;
+
+    [SerializeField] private GameObject levelWindowsEnemy;
    
    
 
@@ -88,6 +90,11 @@ public class InToPlayerCM : MonoBehaviour
             
             healthSystem.Damage(enemy1.hitMax);
 
+            levelWindowsEnemy.GetComponent<LevelWindowEnemy>().AddExpToButton();
+
+            // levelSystem.AddExperience(25);
+            // Debug.Log("ooooooooooooooooooooooooooo");
+
             Destroy(gameObject);
         }
     }
@@ -110,6 +117,7 @@ public class InToPlayerCM : MonoBehaviour
         }
         if (targetTransformInToPlayer == null) {
             Destroy(gameObject);
+
         }
 
     }
@@ -135,4 +143,37 @@ public class InToPlayerCM : MonoBehaviour
         }
 
     }
+
+    // private void SetExpierenceBarSize( float expierenceNormalized) {
+    //     // expierenceBarImage.GetComponent<Image>();
+    //     expierenceBarImage.fillAmount = expierenceNormalized;
+    // }
+
+    // private void SetLevelNumber( int levelNumber) {
+    //     levelText.text = "Lvl " + (levelNumber + 1);
+    //     // Debug.Log(levelText.text);
+    // }
+
+
+    // public void SetLevelSystem(LevelSystem levelSystem) {
+    //     //Set the Level Object
+    //     this.levelSystem = levelSystem;
+    //     //Update the starting values
+    //     SetLevelNumber(levelSystem.GetLevelNumber());
+    //     SetExpierenceBarSize(levelSystem.GetExpierenceNormalized());
+    //     //Subscribe to the changed events
+    //     levelSystem.OnExperienceChanged += LevelSystem_OnExpierenceChanged;
+    //     levelSystem.OnLevelChanged += LevelSystem_OnLevelChanged;
+        
+    // }
+
+    // private void LevelSystem_OnLevelChanged(object sender, EventArgs e) {
+    //     //Level Changed, update text
+    //     SetLevelNumber(levelSystem.GetLevelNumber());
+    // }
+
+    // private void LevelSystem_OnExpierenceChanged(object sender, EventArgs e) {
+    //     //Expierence changed, update bar size
+    //     SetExpierenceBarSize(levelSystem.GetExpierenceNormalized());
+    // }
 }
