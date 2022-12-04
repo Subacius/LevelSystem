@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
 
     // private PlayerPanel2Txt playerPanel2Txt;
 
+    // public event EventHandler OnExperienceChangedNaujas;
+
+
+
     public string nameName;
 
 
@@ -67,6 +71,8 @@ public class Player : MonoBehaviour
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {
 
         Destroy(gameObject);
+
+        // OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
 
         Instantiate(particalEffects, gameObject.transform.position, Quaternion.identity);
         particalEffects = GameObject.Find("Explosion VFX(Clone)");

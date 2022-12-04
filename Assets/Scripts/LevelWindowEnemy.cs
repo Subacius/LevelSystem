@@ -28,10 +28,10 @@ public class LevelWindowEnemy : MonoBehaviour {
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.M)) {
-            // GetComponent<HealthSystem>().Damage(15);
-            levelSystem.AddExperience(25);
-        }
+        // if(Input.GetKeyDown(KeyCode.M)) {
+        //     // GetComponent<HealthSystem>().Damage(15);
+        //     levelSystem.AddExperience(25);
+        // }
     }
 
     private void SetExpierenceBarSize( float expierenceNormalized) {

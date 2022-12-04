@@ -23,7 +23,6 @@ public class HealthSystemPlayer : MonoBehaviour
     public event EventHandler OnRemoveFromList2Unit;
 
     private GameObject [] pfHealthbarFounder;
-
     // private GameObject enemyManager_2;
 
     
@@ -41,9 +40,9 @@ public class HealthSystemPlayer : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.M)) {
-            GetComponent<HealthSystem>().Damage(15);
-        }
+        // if(Input.GetKeyDown(KeyCode.M)) {
+        //     GetComponent<HealthSystemPlayer>().Damage(15);
+        // }
     }
     public void Damage( int damageAmount) {
         healthAmount -= damageAmount;

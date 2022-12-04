@@ -33,7 +33,7 @@ public class InToPlayerCM : MonoBehaviour
 
     [SerializeField] private EnemyTypeSO enemy1;
 
-    [SerializeField] private GameObject levelWindowsEnemy;
+    // [SerializeField] private GameObject levelWindowsEnemy;
    
    
 
@@ -90,7 +90,7 @@ public class InToPlayerCM : MonoBehaviour
             
             healthSystem.Damage(enemy1.hitMax);
 
-            levelWindowsEnemy.GetComponent<LevelWindowEnemy>().AddExpToButton();
+            // levelWindowsEnemy.GetComponent<LevelWindowEnemy>().AddExpToButton();
 
             // levelSystem.AddExperience(25);
             // Debug.Log("ooooooooooooooooooooooooooo");

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Random=UnityEngine.Random;
 
 public class InToEnemyCM : MonoBehaviour
 {
@@ -29,6 +31,8 @@ public class InToEnemyCM : MonoBehaviour
     private GameObject pfEnemy;
     private GameObject pfEnemy2;
     [SerializeField] private PlayerTypeSO player1;
+
+    // public event EventHandler OnExperienceChangedNaujas;
 
     private void Start() {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -99,6 +103,7 @@ public class InToEnemyCM : MonoBehaviour
             HealthSystem healthSystem = enemy.GetComponent<HealthSystem>();
          
             healthSystem.Damage(player1.hitMax);
+            // OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
             // Debug.Log(playerTypeHolder.playerType.hit);
             Destroy(gameObject);
         }

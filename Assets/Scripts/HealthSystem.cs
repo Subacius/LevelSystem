@@ -26,6 +26,8 @@ public class HealthSystem : MonoBehaviour
 
     // private GameObject enemyManager_2;
 
+    public event EventHandler OnExperienceChangedNaujas;
+
     
     
     private int hitMax;
@@ -53,6 +55,7 @@ public class HealthSystem : MonoBehaviour
         healthAmount = Mathf.Clamp(healthAmount, 0 , healthAmountMax);
 
         OnDamaged?.Invoke(this, EventArgs.Empty);
+        OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
 
         if(IsDead()) {
             OnDead?.Invoke(this, EventArgs.Empty);

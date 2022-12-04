@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,18 @@ using UnityEngine;
 public class WeaponPlayer : MonoBehaviour
 {
     [SerializeField] public Transform firePoint;
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] public GameObject bulletPrefab;
+
+    // public event EventHandler OnExperienceChangedNaujas;
+
+    // private LevelWindowPlayer levelWindowPlayer;
 
     // Update is called once per frame
     void Update()
     {
-        // if ( Input.GetButtonDown("Fire1")) {
-            // Shoot();
-        // }
+        if (Input.GetKeyDown(KeyCode.Z)){
+            Shoot();
+        }
     }
 
     public void Shoot() {
@@ -21,7 +26,17 @@ public class WeaponPlayer : MonoBehaviour
         Vector3 enemySpawnPosition = firePoint.position;
         
         InToEnemyCM.Create(enemySpawnPosition);
+        // levelWindowPlayer = FindObjectOfType<LevelWindowPlayer>();
+        // levelWindowPlayer.OnExperienceChangedNaujas += LevelWindowPlayer_OnLevelChangedNaujas;
+
+        // OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
+
     }
+
+    // private void LevelWindowPlayer_OnLevelChangedNaujas(object sender, EventArgs e)
+    // {
+    //     Debug.Log("bombastika");
+    // }
 
 
     // IEnumerator ExampleCoroutine() {

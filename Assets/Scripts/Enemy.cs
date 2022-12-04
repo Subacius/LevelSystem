@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
 
     private WeaponEnemy weaponEnemy;
 
+    public event EventHandler OnExperienceChangedPlayer;
+
 
     [SerializeField] private GameObject particalEffectsEnemy1;
 
@@ -73,6 +75,8 @@ public class Enemy : MonoBehaviour
     }
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {
         Destroy(gameObject);
+
+        OnExperienceChangedPlayer?.Invoke(this, EventArgs.Empty);
         
         Instantiate(particalEffectsEnemy1, gameObject.transform.position, Quaternion.identity);
         particalEffectsEnemy1 = GameObject.Find("Explosion VFXEnemy1(Clone)");
