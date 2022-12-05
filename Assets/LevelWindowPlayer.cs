@@ -48,7 +48,7 @@ public class LevelWindowPlayer : MonoBehaviour
 
         // player.OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
 
-        enemyGameobject.GetComponent<Enemy>().OnExperienceChangedPlayer += WeaponPlayer_OnExpierenceChangedNaujas;
+        // enemyGameobject.GetComponent<Enemy>().OnExperienceChangedPlayer += WeaponPlayer_OnExpierenceChangedNaujas;
 
 
 
