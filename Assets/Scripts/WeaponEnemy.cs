@@ -34,7 +34,7 @@ public class WeaponEnemy : MonoBehaviour
         // ExampleCoroutine();
         InToPlayerCM.CreateInToPlayer(enemySpawnPosition);
 
-        levelWindowsEnemy.GetComponent<LevelWindowEnemy>().AddExpToButton();
+        // levelWindowsEnemy.GetComponent<LevelWindowEnemy>().AddExpToButton();
 
             // levelSystem.AddExperience(25);
             // Debug.Log("ooooooooooooooooooooooooooo");

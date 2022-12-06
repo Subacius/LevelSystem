@@ -18,11 +18,11 @@ public class LevelWindowPlayer : MonoBehaviour
     public TMP_Text levelText;
 
     // public event EventHandler OnExperienceChangedNaujas;
-    // [SerializeField] private WeaponPlayer weaponPlayer;
+    [SerializeField] private WeaponPlayer weaponPlayer;
 
     // [SerializeField] private Player player;
 
-    private GameObject enemyGameobject;
+    // private GameObject enemyGameobject;
 
     // [SerializeField] private GameObject bandom;
 
@@ -35,16 +35,18 @@ public class LevelWindowPlayer : MonoBehaviour
         // bandom = GetComponent<WeaponPlayer>().bulletPrefab;
 
         // bandom = GameObject.Find("pfRutulysInToEnemy(Clone)");
-        enemyGameobject = GameObject.FindGameObjectWithTag("Enemy1");
+        // enemyGameobject = GameObject.FindGameObjectWithTag("Enemy1");
     }
     void Start() {
-        // weaponPlayer.OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
+        weaponPlayer.OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
 
         // weaponPlayer.bulletPrefab.GetComponent<InToEnemyCM>().OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
 
         // bandom.GetComponent<InToEnemyCM>().OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
 
         // bandom.GetComponent<WeaponPlayer>().bulletPrefab.GetComponent<InToEnemyCM>().OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
+
+        // player.transform.Find("")
 
         // player.OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
 
@@ -63,23 +65,32 @@ public class LevelWindowPlayer : MonoBehaviour
 
     }
 
-    private void Update() {
-        if(enemyGameobject != null) {
-             enemyGameobject.GetComponent<Enemy>().OnExperienceChangedPlayer += WeaponPlayer_OnExpierenceChangedNaujas;
-        }
-    }
+    // private void Update() {
+    //     if(enemyGameobject != null) {
+    //          enemyGameobject.GetComponent<Enemy>().OnExperienceChangedPlayer += WeaponPlayer_OnExpierenceChangedNaujas;
+    //     }
+    // }
 
     private void WeaponPlayer_OnExpierenceChangedNaujas(object sender, EventArgs e) {
         Debug.Log("oooooooooooooooooo");
-        updatedExp += 5f;
+        // updatedExp += UnityEngine.Random.Range(3.9f, 29f);
+        updatedExp += 33f;
+        // Debug.Log(updatedExp);
         Expbar.fillAmount = updatedExp / maxExp;
 
         levelText.text = "Lvl " + playerLevel;
 
-        if (updatedExp >= maxExp) {
+        while (updatedExp >= maxExp) {
+            // Debug.Log( "Viduje updated " + updatedExp);
+            // Debug.Log( "Viduje max " + maxExp);         
             playerLevel++;
-            updatedExp=0;
+            updatedExp -= maxExp;
+            Debug.Log( "Viduje updated PPPPPP " + updatedExp);
+            Debug.Log( "Viduje max ooooooo " + maxExp);
+
             maxExp += maxExp;
+            Expbar.fillAmount = updatedExp / maxExp;    
+
         }
     }
 

@@ -66,7 +66,7 @@ public class LevelWindowEnemy : MonoBehaviour {
         SetExpierenceBarSize(levelSystem.GetExpierenceNormalized());
     }
 
-    public void AddExpToButton() {
-        levelSystem.AddExperience(7);
-    }
+    // public void AddExpToButton() {
+    //     levelSystem.AddExperience(7);
+    // }
 }

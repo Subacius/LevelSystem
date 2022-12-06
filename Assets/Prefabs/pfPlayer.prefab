@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316057771121734333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.6565223, y: 3.6403089, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 316057771504316482}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e42d7ecd0867143adc80a2e85dfb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmountMax: 111
+  healthAmountMax: 1000
   healthAmount: 0
 --- !u!114 &7515555828466541271
 MonoBehaviour:
@@ -306,13 +306,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 316057771121734332}
     m_Modifications:
     - target: {fileID: 6194952479012935618, guid: ef87d31b1da2a2948b833db006ba9ba1, type: 3}
-      propertyPath: player
+      propertyPath: weaponPlayer
       value: 
-      objectReference: {fileID: 7515555828466541271}
-    - target: {fileID: 7472355962449642857, guid: ef87d31b1da2a2948b833db006ba9ba1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddBandom
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8207880112581138435}
     - target: {fileID: 7844172435989506354, guid: ef87d31b1da2a2948b833db006ba9ba1, type: 3}
       propertyPath: m_Name
       value: PfPlayerCanvas

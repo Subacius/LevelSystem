@@ -8,7 +8,7 @@ public class WeaponPlayer : MonoBehaviour
     [SerializeField] public Transform firePoint;
     [SerializeField] public GameObject bulletPrefab;
 
-    // public event EventHandler OnExperienceChangedNaujas;
+    public event EventHandler OnExperienceChangedNaujas;
 
     // private LevelWindowPlayer levelWindowPlayer;
 
@@ -29,7 +29,7 @@ public class WeaponPlayer : MonoBehaviour
         // levelWindowPlayer = FindObjectOfType<LevelWindowPlayer>();
         // levelWindowPlayer.OnExperienceChangedNaujas += LevelWindowPlayer_OnLevelChangedNaujas;
 
-        // OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
+        OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
 
     }
 

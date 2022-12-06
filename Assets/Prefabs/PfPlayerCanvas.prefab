@@ -17,7 +17,7 @@ MonoBehaviour:
   Expbar: {fileID: 9141931829964858403}
   playerLevel: 0
   levelText: {fileID: 1871622535423006243}
-  healthSystemPlayer: {fileID: 0}
+  weaponPlayer: {fileID: 0}
 --- !u!1 &7844172435989506354
 GameObject:
   m_ObjectHideFlags: 0
