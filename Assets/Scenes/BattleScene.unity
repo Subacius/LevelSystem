@@ -1500,6 +1500,7 @@ MonoBehaviour:
   damageText: {fileID: 121019090}
   Button: {fileID: 1296428964}
   endButton: {fileID: 1555205689}
+  levelWindowPlay: {fileID: 0}
 --- !u!4 &1888666390
 Transform:
   m_ObjectHideFlags: 0

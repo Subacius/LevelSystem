@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &6194952479012935618
+--- !u!114 &4361346617274286408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 76990677958629030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42c25dfb590d074bbe2079114fa75b4, type: 3}
+  m_Script: {fileID: 11500000, guid: a2f3112f4b907a445bf670d1d7e24bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxExp: 0
-  updatedExp: 0
-  Expbar: {fileID: 9141931829964858403}
-  playerLevel: 0
   levelText: {fileID: 1871622535423006243}
-  weaponPlayer: {fileID: 0}
+  expierenceBarImage: {fileID: 9141931829964858403}
 --- !u!1 &7844172435989506354
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +50,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.32}
+  m_AnchoredPosition: {x: 0, y: 0.32000732}
   m_SizeDelta: {x: 1.5, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6722161311753476129

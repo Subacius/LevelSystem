@@ -8,9 +8,23 @@ public class WeaponPlayer : MonoBehaviour
     [SerializeField] public Transform firePoint;
     [SerializeField] public GameObject bulletPrefab;
 
+    // [SerializeField] private 
+
+    // [SerializeField] private LevelSystem levelSystem;
+
+    // [SerializeField] private LevelSystem levelSystem;
+
     public event EventHandler OnExperienceChangedNaujas;
 
     // private LevelWindowPlayer levelWindowPlayer;
+
+    // public event EventHandler Boom;
+
+
+
+    private void Awake() {
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,12 +40,37 @@ public class WeaponPlayer : MonoBehaviour
         Vector3 enemySpawnPosition = firePoint.position;
         
         InToEnemyCM.Create(enemySpawnPosition);
+        
+        OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
+
+        // levelSystem.AddExperience(33);
+
+
+
+
+        // levelSystem.AddExperience(22);
+        
+        // Boom?.Invoke(this, EventArgs.Empty);
+
+        // levelSystem.OnExperienceChanged += LevelSystem_OnExpierenceChanged;
+
+
+        // levelSystem.OnExperienceChanged += LevelSystem_OnExpierenceChanged;
+
+        
+
+
         // levelWindowPlayer = FindObjectOfType<LevelWindowPlayer>();
         // levelWindowPlayer.OnExperienceChangedNaujas += LevelWindowPlayer_OnLevelChangedNaujas;
 
-        OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
+
 
     }
+
+    // private void LevelSystem_OnExpierenceChanged(object sender, EventArgs e)
+    // {
+    //     levelSystem.AddExperience(7);
+    // }
 
     // private void LevelWindowPlayer_OnLevelChangedNaujas(object sender, EventArgs e)
     // {

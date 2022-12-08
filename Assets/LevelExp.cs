@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class LevelWindowPlayer : MonoBehaviour
+public class LevelExp : MonoBehaviour
 {
 
     public int maxExp;
@@ -13,23 +13,15 @@ public class LevelWindowPlayer : MonoBehaviour
     public Image Expbar;
     // public float expInreasePerSecond;
 
-    public int playerLevel;
+    // public int playerLevel;
 
-    public TMP_Text levelText;
+    public Text levelText;
 
     // public event EventHandler OnExperienceChangedNaujas;
-    [SerializeField] private WeaponPlayer weaponPlayer;
+    // [SerializeField] private WeaponPlayer weaponPlayer;
 
-    // [SerializeField] private Player player;
+    [SerializeField] private GameObject playerBattleStation;
 
-    // private GameObject enemyGameobject;
-
-    // [SerializeField] private GameObject bandom;
-
-    // [SerializeField] private InToEnemyCM inToEnemyCM;
-
-    // [SerializeField] private HealthSystemPlayer healthSystemPlayer;
-    // Start is called before the first frame update
 
     private void Awake() {
         // bandom = GetComponent<WeaponPlayer>().bulletPrefab;
@@ -39,6 +31,12 @@ public class LevelWindowPlayer : MonoBehaviour
     }
     void Start() {
         // weaponPlayer.OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
+
+
+        WeaponPlayer playerBattleStation  = GetComponentInChildren<WeaponPlayer>();
+        
+        // playerBattleStation.OnExperienceChangedNaujas += PlayerBattleStation_OnExpierenceChangedNaujas;
+        
 
         // weaponPlayer.bulletPrefab.GetComponent<InToEnemyCM>().OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
 
@@ -55,13 +53,19 @@ public class LevelWindowPlayer : MonoBehaviour
 
 
         // weaponPlayer = FindObjectOfType<WeaponPlayer>();
-        playerLevel = 1;
+        // playerLevel = 1;
         // expInreasePerSecond = 5f;
         maxExp = 25;
         updatedExp = 0;
 
 
         // healthSystemPlayer.OnExperienceChangedNaujas += HealthSystemPlayer_OnExpierenceChangedNaujas;
+
+    }
+
+    private void PlayerBattleStation_OnExpierenceChangedNaujas(object sender, EventArgs e)
+    {
+        Debug.Log("Test");
 
     }
 
@@ -76,14 +80,14 @@ public class LevelWindowPlayer : MonoBehaviour
         // updatedExp += UnityEngine.Random.Range(3.9f, 29f);
         updatedExp += 15f;
         // Debug.Log(updatedExp);
-        Expbar.fillAmount = updatedExp / maxExp;
+        // Expbar.fillAmount = updatedExp / maxExp;
 
-        levelText.text = "Lvl " + playerLevel;
+        // levelText.text = "Lvl " + playerLevel;
 
         while (updatedExp >= maxExp) {
             // Debug.Log( "Viduje updated " + updatedExp);
             // Debug.Log( "Viduje max " + maxExp);         
-            playerLevel++;
+            // playerLevel++;
             if (updatedExp>= maxExp){
                 updatedExp -= maxExp;
             }
@@ -92,7 +96,7 @@ public class LevelWindowPlayer : MonoBehaviour
             Debug.Log( "Viduje max ooooooo " + maxExp);
 
             // maxExp += maxExp;
-            Expbar.fillAmount = updatedExp / maxExp;    
+            // Expbar.fillAmount = updatedExp / maxExp;    
 
         }
     }

@@ -121,6 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2895504744944398874}
+  - component: {fileID: 1206155800984543751}
   m_Layer: 0
   m_Name: LevelWindowPlayer
   m_TagString: Untagged
@@ -150,6 +151,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1.5, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1206155800984543751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5029422620029327838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f3112f4b907a445bf670d1d7e24bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelText: {fileID: 6711710773188827483}
+  expierenceBarImage: {fileID: 4180243380802972507}
 --- !u!1 &6230803398153749222
 GameObject:
   m_ObjectHideFlags: 0

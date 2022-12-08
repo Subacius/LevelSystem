@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     private PlayerManagerAll playerManagerAll;
 
+    private WeaponPlayer weaponPlayer;
+
     // private PlayerPanel1Txt playerPanelTxt;
 
     // private PlayerPanel2Txt playerPanel2Txt;
@@ -20,7 +22,9 @@ public class Player : MonoBehaviour
 
 
 
-    public string nameName;
+    // public string nameName;
+
+    private LevelSystem levelSystem;
 
 
     private void Awake () {
@@ -32,31 +36,20 @@ public class Player : MonoBehaviour
     private void Start() {
 
         playerType = GetComponent<PlayerTypeHolder>().playerType;
+
         healthSystem = GetComponent<HealthSystemPlayer>();
-
-        // healthSystem.SetHealthAmountMax(playerType.healthAmountMax, true);
-
-
-
-        
-
-
-        // healthSystem.SetHealthAmountMax2(playerType.healthAmountMax, true);
-        
-        // healthSystem.SetHealthCurrent(healthSystem.healthAmount);
-        // Debug.Log(healthSystem.GetHealthAmount());
-        // healthSystem.SetHealthCurrent(healthSystem.GetHealthAmount());
-        // healthSystem.GetHealthAmountNormalized();
-        // Debug.Log(healthSystem.GetHealthAmountNormalized());
-
-        // healthSystem.GetHealthAmount();
-        // Debug.Log(healthSystem.GetHealthAmount());
 
         healthSystem.OnDead += HealthSystem_OnDied;
 
         healthSystem.OnRemoveFromList += HealthSystem_OnRemoveFromList;
 
         playerManagerAll = FindObjectOfType<PlayerManagerAll>();
+
+        weaponPlayer = GetComponent<WeaponPlayer>();
+
+        weaponPlayer.OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
+
+        
 
         // playerPanelTxt = FindObjectOfType<PlayerPanel1Txt>();
 
@@ -65,7 +58,12 @@ public class Player : MonoBehaviour
     }
 
 
+
     private void Update() {
+        if (Input.GetKeyDown(KeyCode.B)){
+            levelSystem.AddExperience(17);
+        }
+
 
     }
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {
@@ -96,12 +94,13 @@ public class Player : MonoBehaviour
 
     private void HealthSystem_OnRemoveFromList (object sender, EventArgs e) {
         PlayerTypeListSO playerTypeList = Resources.Load<PlayerTypeListSO>(typeof(PlayerTypeListSO).Name);
-        pftestArray = GameObject.FindGameObjectWithTag("Army");
-        PlayerManagerAll testArray = pftestArray.GetComponent<PlayerManagerAll>();
 
-        
+        pftestArray = GameObject.FindGameObjectWithTag("Army");
+
+        PlayerManagerAll testArray = pftestArray.GetComponent<PlayerManagerAll>();
     
         testArray.primeGameObject.Remove(gameObject);
+
         playerManagerAll.RemovePlayerUnit(playerTypeList.list[0], 1);
         // remove from Panel1
         // playerPanelTxt.RemoveCounter();
@@ -109,7 +108,18 @@ public class Player : MonoBehaviour
 
     }
 
+    public void SetLevelSystem(LevelSystem levelSystem) {
+        this.levelSystem = levelSystem;
 
+        levelSystem.OnLevelChanged += LevelSystem_OnLevelChanged;
+    }
 
+    private void LevelSystem_OnLevelChanged(object sender, EventArgs e)
+    {
+        Debug.Log("Levelis pasikeiteeeeeee");
+    }
 
+    private void WeaponPlayer_OnExpierenceChangedNaujas(object sender, EventArgs e) {
+        levelSystem.AddExperience(33);
+    }
 }

@@ -18,6 +18,7 @@ public class LevelSystem
     }
 
     public void AddExperience (int amount) {
+        //+= increase exp
         experience += amount;
         while (experience>= experienceToNextLevel) {
             level++;
