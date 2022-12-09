@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnemyBattleStation1
+  - BattleSystem1
+  - Player1
+  - Enemy1
+  - HP
+  - Tagiukas
   layers:
   - Default
   - TransparentFX

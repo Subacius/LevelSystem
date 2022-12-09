@@ -71,7 +71,11 @@ public class BattleSystem : MonoBehaviour
 
     bool isDead = false;
 
-    [SerializeField] private LevelWindowPlay levelWindowPlay;
+    [SerializeField] private LevelWindowPlay [] levelWindowPlay;
+
+    [SerializeField] private Player player;
+
+    private LevelSystem levelSystem;
 
     // [SerializeField] private Player player;
 
@@ -79,13 +83,35 @@ public class BattleSystem : MonoBehaviour
 
     private void Awake() {
 
-        LevelSystem levelSystem = new LevelSystem();
+
+
+
+
+
+
+
 
         foreach (GameObject go in playerList) {
+
+            LevelSystem levelSystem = new LevelSystem();
             go.GetComponent<Player>().SetLevelSystem(levelSystem);
             Debug.Log(go.GetComponent<Player>());
-            go.GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
-            Debug.Log(go.GetComponent<LevelWindowPlay>());
+            // go.GetComponent<Player>().AddExp();
+
+            // go.GetComponent<Player>().nameName;
+            Debug.Log(go.GetComponent<Player>().nameName);
+
+            // go.GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
+
+                    foreach(LevelWindowPlay gogo in levelWindowPlay) {
+                        gogo.transform.Find("PfPlayerCanvas").transform.Find("LevelWindowPlayer").GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
+                }
+
+            // go.transform.Find("PfPlayerCanvas").transform.Find("LevelWindowPlayer").GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
+
+
+    
+
         }
 
         // levelWindowPlay.SetLevelSystem(levelSystem);
@@ -93,11 +119,26 @@ public class BattleSystem : MonoBehaviour
         // player.SetLevelSystem(levelSystem);
 
 
+
+
         for ( int i = 0; i < playerList.Length; i++ ) {
 
             // testArray.primeGameObject[i].transform.position = new Vector3 ( Random.Range(-2.5f, 2.5f), Random.Range(-4.2f, 4.2f), 0 );
             GameObject playerGo = Instantiate(playerList[i], playerBattleStation);
             playerList[i].transform.position = new Vector3 ( Random.Range(-2.5f, 2.5f), Random.Range(-4.2f, 4.2f), 0 ); 
+
+            // LevelSystem levelSystem = new LevelSystem();
+            // playerList[i].GetComponent<Player>().SetLevelSystem(levelSystem);
+            // // playerList[i].GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
+
+            // gamgamgam.GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
+
+            
+
+
+                    //     playerTransform = transform.Find("LevelWindowPlayer");
+                    //    playerTransform.GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
+
             // playerTypeHolder = playerGo.GetComponent<PlayerTypeHolder>();
         }
 
@@ -223,6 +264,7 @@ public class BattleSystem : MonoBehaviour
             // Debug.Log(enemy1.transform.position.y);
             yield return new WaitForSeconds(0.5f);
             player1.GetComponent<WeaponPlayer>().Shoot();
+            
 
         }
 

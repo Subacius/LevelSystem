@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
 
 
-    // public string nameName;
+    public string nameName;
 
     private LevelSystem levelSystem;
 
@@ -62,6 +62,10 @@ public class Player : MonoBehaviour
     private void Update() {
         if (Input.GetKeyDown(KeyCode.B)){
             levelSystem.AddExperience(17);
+        }
+
+        if (Input.GetKeyDown(KeyCode.V)){
+            Debug.Log(nameName);
         }
 
 
@@ -121,5 +125,9 @@ public class Player : MonoBehaviour
 
     private void WeaponPlayer_OnExpierenceChangedNaujas(object sender, EventArgs e) {
         levelSystem.AddExperience(33);
+    }
+
+    public void AddExp() {
+        levelSystem.AddExperience(17);
     }
 }

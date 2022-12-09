@@ -1478,8 +1478,6 @@ MonoBehaviour:
   state: 0
   playerList:
   - {fileID: 316057771121734333, guid: 5f3f550ba5fb08743a4188b37f94387d, type: 3}
-  - {fileID: 316057771121734333, guid: 5f3f550ba5fb08743a4188b37f94387d, type: 3}
-  - {fileID: 316057771121734333, guid: 5f3f550ba5fb08743a4188b37f94387d, type: 3}
   pfEnemyManagerBuilding1: {fileID: 0}
   enemyList:
   - {fileID: 1645385650458327212, guid: 11effa0bab755d34d8a9df595305d237, type: 3}
@@ -1500,7 +1498,7 @@ MonoBehaviour:
   damageText: {fileID: 121019090}
   Button: {fileID: 1296428964}
   endButton: {fileID: 1555205689}
-  levelWindowPlay: {fileID: 0}
+  levelWindowPlay: {fileID: 1206155800984543751, guid: d9af38ff0678eaf4fb03fdf34dc9bb10, type: 3}
 --- !u!4 &1888666390
 Transform:
   m_ObjectHideFlags: 0
