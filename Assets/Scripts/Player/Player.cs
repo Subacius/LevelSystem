@@ -20,11 +20,9 @@ public class Player : MonoBehaviour
 
     // public event EventHandler OnExperienceChangedNaujas;
 
-
-
-    public string nameName;
-
     private LevelSystem levelSystem;
+
+    private GameObject inToEnemyCM;
 
 
     private void Awake () {
@@ -49,6 +47,8 @@ public class Player : MonoBehaviour
 
         weaponPlayer.OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
 
+
+
         
 
         // playerPanelTxt = FindObjectOfType<PlayerPanel1Txt>();
@@ -60,13 +60,13 @@ public class Player : MonoBehaviour
 
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.B)){
-            levelSystem.AddExperience(17);
-        }
+        // if (Input.GetKeyDown(KeyCode.B)){
+        //     levelSystem.AddExperience(17);
+        // }
 
-        if (Input.GetKeyDown(KeyCode.V)){
-            Debug.Log(nameName);
-        }
+        // if (Input.GetKeyDown(KeyCode.V)){
+        //     Debug.Log(nameName);
+        // }
 
 
     }
@@ -81,20 +81,6 @@ public class Player : MonoBehaviour
         Destroy(particalEffects.gameObject, 1f);
 
     }
-
-    // private void HealthSystem_OnRemoveFromList (object sender, EventArgs e) {
-    //     PlayerTypeListSO playerTypeList = Resources.Load<PlayerTypeListSO>(typeof(PlayerTypeListSO).Name);
-    //     pftestArray = GameObject.FindGameObjectWithTag("Army");
-    //     PlayerManagerAll testArray = pftestArray.GetComponent<PlayerManagerAll>();
-    
-    //     testArray.primeGameObject.Remove(testArray.pfPlayer);
-    //     playerManagerAll.RemovePlayerUnit(playerTypeList.list[0], 1);
-
-    //     playerPanelTxt.RemoveCounter();
-
-
-    // }
-
 
     private void HealthSystem_OnRemoveFromList (object sender, EventArgs e) {
         PlayerTypeListSO playerTypeList = Resources.Load<PlayerTypeListSO>(typeof(PlayerTypeListSO).Name);
@@ -121,13 +107,34 @@ public class Player : MonoBehaviour
     private void LevelSystem_OnLevelChanged(object sender, EventArgs e)
     {
         Debug.Log("Levelis pasikeiteeeeeee");
+        SetHealthBarSize(1f + levelSystem.GetLevelNumber() * 0.05f);
+        // SetHealthAmountMax(healthSystem.GetHealthAmount() + 11);
+        // Debug.Log(healthSystem.GetComponent<HealthSystem>().healthAmount);
+        // int healthAmountMax = healthSystem.GetHealthAmount() + 4;
+
+        healthSystem.SetHealthAmountMax(healthSystem.healthAmountMax + 4);
+
     }
+
+        private void SetHealthBarSize(float healthBarSize) {
+            transform.Find("pfHealthBarPlayer").localScale = new Vector3(1f * healthBarSize, 1 , 1);
+    }
+
+    // private void WeaponPlayer_OnExpierenceChangedNaujas(object sender, EventArgs e) {
+    //     levelSystem.AddExperience(UnityEngine.Random.Range(11,33));
+        
+    // }
 
     private void WeaponPlayer_OnExpierenceChangedNaujas(object sender, EventArgs e) {
-        levelSystem.AddExperience(33);
+        // levelSystem.AddExperience(UnityEngine.Random.Range(11,33));
+
+        inToEnemyCM = GameObject.Find("pfRutulysInToEnemy(Clone)");
+
+        inToEnemyCM.GetComponent<InToEnemyCM>().OnExperienceChangedInToEnemy += InToEnemyCM_OnExpierenceChangedInToEnemy;
     }
 
-    public void AddExp() {
-        levelSystem.AddExperience(17);
+    private void InToEnemyCM_OnExpierenceChangedInToEnemy(object sender, EventArgs e)
+    {
+        levelSystem.AddExperience(UnityEngine.Random.Range(33,66));
     }
 }

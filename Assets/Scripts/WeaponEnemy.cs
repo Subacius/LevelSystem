@@ -9,7 +9,8 @@ public class WeaponEnemy : MonoBehaviour
     [SerializeField] public Transform firePoint;
     [SerializeField] public GameObject bulletPrefabEnemy;
 
-    [SerializeField] private GameObject levelWindowsEnemy;
+    public event EventHandler OnExperienceChangedNaujasEnemy;
+
 
     // private LevelSystem levelSystem;
 
@@ -34,6 +35,7 @@ public class WeaponEnemy : MonoBehaviour
         // ExampleCoroutine();
         InToPlayerCM.CreateInToPlayer(enemySpawnPosition);
 
+        OnExperienceChangedNaujasEnemy?.Invoke(this, EventArgs.Empty);
         // levelWindowsEnemy.GetComponent<LevelWindowEnemy>().AddExpToButton();
 
             // levelSystem.AddExperience(25);

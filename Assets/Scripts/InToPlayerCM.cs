@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,13 +34,15 @@ public class InToPlayerCM : MonoBehaviour
 
     [SerializeField] private EnemyTypeSO enemy1;
 
+    public event EventHandler OnExperienceChangedInToPlayer;
+
     // [SerializeField] private GameObject levelWindowsEnemy;
    
    
 
     private void Start() {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
+        lookForTargetTimer = UnityEngine.Random.Range(0f, lookForTargetTimerMax);
 
         if(targetTransformInToPlayer != null) {
         pfPlayer = GameObject.Find("pfPlayer(Clone)");
@@ -89,6 +92,7 @@ public class InToPlayerCM : MonoBehaviour
             HealthSystemPlayer healthSystem = player.GetComponent<HealthSystemPlayer>();
             
             healthSystem.Damage(enemy1.hitMax);
+            OnExperienceChangedInToPlayer?.Invoke(this, EventArgs.Empty);
 
             // levelWindowsEnemy.GetComponent<LevelWindowEnemy>().AddExpToButton();
 

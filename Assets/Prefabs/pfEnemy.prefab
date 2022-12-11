@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645385650458327212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24292088, y: -0.8168063, z: 0}
+  m_LocalPosition: {x: 2.3940191, y: 3.9021862, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1645385650314207795}
@@ -188,7 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7623200297549658230}
   bulletPrefabEnemy: {fileID: 7984466730725719472, guid: 90c47474322045544a701f2013e5e2ad, type: 3}
-  levelWindowsEnemy: {fileID: 1546908081676105780}
 --- !u!114 &2755161059310997711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,11 +335,6 @@ PrefabInstance:
 --- !u!224 &8030584681785662986 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2759348006935044884, guid: 644217210d079d1449b5c970a6b90532, type: 3}
-  m_PrefabInstance: {fileID: 5276374181755010334}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1546908081676105780 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6651476800439354666, guid: 644217210d079d1449b5c970a6b90532, type: 3}
   m_PrefabInstance: {fileID: 5276374181755010334}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8601100536193227122

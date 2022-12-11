@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: Player1
   m_EditorClassIdentifier: 
   nameString: Player1
-  prefab: {fileID: 316057771121734332, guid: bf5219cf3bff41a41b55c40f5fd1cd7e, type: 3}
+  prefab: {fileID: 316057771121734332, guid: 5f3f550ba5fb08743a4188b37f94387d, type: 3}
   sprite: {fileID: 21300000, guid: 9bb5fb5eb02a9be4f93a61ecca7c5002, type: 3}
   healthAmountMax: 157
-  healthAmountTest: 27
   hitMax: 25
-  constructionResourceCostArray:
-  - resourceType: {fileID: 11400000, guid: e69bcb4c69ae6f94ca772b2487ff7fbf, type: 2}
-    amount: 50
-  - resourceType: {fileID: 11400000, guid: fc793868043b8db479691913cc814c36, type: 2}
-    amount: 75

@@ -8,7 +8,7 @@ using System;
 
 public class HealthSystemPlayer : MonoBehaviour
 {
-    [SerializeField] private int healthAmountMax;
+    [SerializeField] public int healthAmountMax;
     
     public int healthAmount;
     
@@ -82,12 +82,20 @@ public class HealthSystemPlayer : MonoBehaviour
         return (float)healthAmount / healthAmountMax;
     }
 
-    public void SetHealthAmountMax (int healthAmountMax, bool updateHealthAmount) {
+    // public void SetHealthAmountMax (int healthAmountMax, bool updateHealthAmount) {
+    //     this.healthAmountMax = healthAmountMax;
+
+    //     if(updateHealthAmount) {
+    //         healthAmount = healthAmountMax;
+    //     }
+    // }
+
+    public void SetHealthAmountMax (int healthAmountMax) {
         this.healthAmountMax = healthAmountMax;
 
-        if(updateHealthAmount) {
-            healthAmount = healthAmountMax;
-        }
+        // if(updateHealthAmount) {
+        //     healthAmount = healthAmountMax;
+        // }
     }
 
 

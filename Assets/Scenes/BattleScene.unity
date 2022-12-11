@@ -967,6 +967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 861658588}
+  - component: {fileID: 861658589}
   m_Layer: 0
   m_Name: EnemyBattleStation
   m_TagString: EnemyBattleStation1
@@ -989,6 +990,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &861658589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861658587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a60194ddea8cfe4385d3afe5c482128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allEnemies: []
+  allEnemiesSecond: []
 --- !u!1 &924820092
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 924820093}
+  - component: {fileID: 924820094}
   m_Layer: 0
   m_Name: PlayerBattleStation
   m_TagString: Untagged
@@ -1020,6 +1036,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924820094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924820092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9c84ee73c4f9942b57e8fa6b69b0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allPlayers: []
+  allPlayersSecond: []
 --- !u!1 &1066851051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1508,8 @@ MonoBehaviour:
   state: 0
   playerList:
   - {fileID: 316057771121734333, guid: 5f3f550ba5fb08743a4188b37f94387d, type: 3}
-  pfEnemyManagerBuilding1: {fileID: 0}
+  - {fileID: 316057771121734333, guid: 5f3f550ba5fb08743a4188b37f94387d, type: 3}
+  - {fileID: 316057771121734333, guid: 5f3f550ba5fb08743a4188b37f94387d, type: 3}
   enemyList:
   - {fileID: 1645385650458327212, guid: 11effa0bab755d34d8a9df595305d237, type: 3}
   - {fileID: 1645385650458327212, guid: 11effa0bab755d34d8a9df595305d237, type: 3}
@@ -1498,7 +1529,6 @@ MonoBehaviour:
   damageText: {fileID: 121019090}
   Button: {fileID: 1296428964}
   endButton: {fileID: 1555205689}
-  levelWindowPlay: {fileID: 1206155800984543751, guid: d9af38ff0678eaf4fb03fdf34dc9bb10, type: 3}
 --- !u!4 &1888666390
 Transform:
   m_ObjectHideFlags: 0

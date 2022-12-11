@@ -32,9 +32,15 @@ public class InToEnemyCM : MonoBehaviour
     private GameObject pfEnemy2;
     [SerializeField] private PlayerTypeSO player1;
 
+    public event EventHandler OnExperienceChangedInToEnemy;
+
     // public event EventHandler OnExperienceChangedNaujas;
 
     private void Start() {
+
+        // weaponPlayer.OnExperienceChangedNaujas += WeaponPlayer_OnExpierenceChangedNaujas;
+
+
         rigidbody2d = GetComponent<Rigidbody2D>();
         lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
 
@@ -58,14 +64,18 @@ public class InToEnemyCM : MonoBehaviour
 
 
 
+
+
         // playerTypeHolder = GetComponent<PlayerTypeHolder>();
 
     }
 
+
+
     private void Update() {
         if((targetTransform != null)) {
             Vector3 moveDir = (targetTransform.position - transform.position).normalized;
-
+            
             float moveSpeed = 10f;
             rigidbody2d.velocity = moveDir * moveSpeed;
 
@@ -100,9 +110,18 @@ public class InToEnemyCM : MonoBehaviour
         // Debug.Log("collisionOnEnemyyyyyy");
         Enemy enemy = collider.gameObject.GetComponent<Enemy>();
         if(enemy != null) {
+
+
             HealthSystem healthSystem = enemy.GetComponent<HealthSystem>();
          
             healthSystem.Damage(player1.hitMax);
+
+            OnExperienceChangedInToEnemy?.Invoke(this, EventArgs.Empty);
+
+            // OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
+
+
+
             // OnExperienceChangedNaujas?.Invoke(this, EventArgs.Empty);
             // Debug.Log(playerTypeHolder.playerType.hit);
             Destroy(gameObject);
@@ -152,4 +171,7 @@ public class InToEnemyCM : MonoBehaviour
         }
 
     }
+
+
+
 }

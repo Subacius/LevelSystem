@@ -25,8 +25,6 @@ public class BattleSystem : MonoBehaviour
 
     // private GameObject [] findAllEnemyByTag2;
 
-    [SerializeField] private GameObject pfEnemyManagerBuilding1;
-
     [SerializeField] private GameObject [] enemyList;
 
     private GameObject [] AddToArrayEnemy;
@@ -71,16 +69,6 @@ public class BattleSystem : MonoBehaviour
 
     bool isDead = false;
 
-    [SerializeField] private LevelWindowPlay [] levelWindowPlay;
-
-    [SerializeField] private Player player;
-
-    private LevelSystem levelSystem;
-
-    // [SerializeField] private Player player;
-
-    // private GameObject [] players;
-
     private void Awake() {
 
 
@@ -91,28 +79,26 @@ public class BattleSystem : MonoBehaviour
 
 
 
-        foreach (GameObject go in playerList) {
+        // foreach (GameObject go in playerList) {
 
-            LevelSystem levelSystem = new LevelSystem();
-            go.GetComponent<Player>().SetLevelSystem(levelSystem);
-            Debug.Log(go.GetComponent<Player>());
-            // go.GetComponent<Player>().AddExp();
+        //     LevelSystem levelSystem = new LevelSystem();
+        //     go.GetComponent<Player>().SetLevelSystem(levelSystem);
+        //     Debug.Log(go.GetComponent<Player>());
+        //     // go.GetComponent<Player>().AddExp();
 
-            // go.GetComponent<Player>().nameName;
-            Debug.Log(go.GetComponent<Player>().nameName);
+        //     // go.GetComponent<Player>().nameName;
+        //     Debug.Log(go.GetComponent<Player>().nameName);
 
-            // go.GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
+        //     go.transform.Find("PfPlayerCanvas").transform.Find("LevelWindowPlayer").GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
 
-                    foreach(LevelWindowPlay gogo in levelWindowPlay) {
-                        gogo.transform.Find("PfPlayerCanvas").transform.Find("LevelWindowPlayer").GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
-                }
+        //     // go.GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
 
-            // go.transform.Find("PfPlayerCanvas").transform.Find("LevelWindowPlayer").GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
+        //     // go.transform.Find("PfPlayerCanvas").transform.Find("LevelWindowPlayer").GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
 
 
     
 
-        }
+        // }
 
         // levelWindowPlay.SetLevelSystem(levelSystem);
 
