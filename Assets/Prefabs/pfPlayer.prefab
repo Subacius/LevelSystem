@@ -59,13 +59,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316057771121734333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.262275, y: 2.5655901, z: 0}
+  m_LocalPosition: {x: -2.353119, y: 3.6483026, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 316057771504316482}
   - {fileID: 316057770902538541}
   - {fileID: 4601624597495516750}
-  - {fileID: 7381186566760091915}
+  - {fileID: 4979505692088018252}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -297,21 +297,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3708123712357179039, guid: 6d95129ef081f1948bf1123d35a7c90a, type: 3}
   m_PrefabInstance: {fileID: 912445041525067985}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2124395013710832019
+--- !u!1001 &4471689714519741908
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 316057771121734332}
     m_Modifications:
-    - target: {fileID: 3873917207931565420, guid: ef87d31b1da2a2948b833db006ba9ba1, type: 3}
-      propertyPath: m_text
-      value: Lvl 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5973206299174618988, guid: ef87d31b1da2a2948b833db006ba9ba1, type: 3}
-      propertyPath: m_FillAmount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7844172435989506354, guid: ef87d31b1da2a2948b833db006ba9ba1, type: 3}
       propertyPath: m_Name
       value: PfPlayerCanvas
@@ -402,8 +394,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef87d31b1da2a2948b833db006ba9ba1, type: 3}
---- !u!224 &7381186566760091915 stripped
+--- !u!224 &4979505692088018252 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8868819193106444440, guid: ef87d31b1da2a2948b833db006ba9ba1, type: 3}
-  m_PrefabInstance: {fileID: 2124395013710832019}
+  m_PrefabInstance: {fileID: 4471689714519741908}
   m_PrefabAsset: {fileID: 0}

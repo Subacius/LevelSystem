@@ -46,9 +46,6 @@ public class Enemy : MonoBehaviour
 
     private void LevelSystem_OnLevelChanged(object sender, EventArgs e)
     {
-        Instantiate(particalEffectsEnemy1, gameObject.transform.position, Quaternion.identity);
-
-
         // Destroy(particalEffectsEnemy1.gameObject, 1f);
         // healthbar padidina  10 proc
         SetHealthBarSize(1f + levelSystem.GetLevelNumber() * 0.05f);
@@ -56,11 +53,7 @@ public class Enemy : MonoBehaviour
         // Debug.Log(healthSystem.GetComponent<HealthSystem>().healthAmount);
         // int healthAmountMax = healthSystem.GetHealthAmount() + 4;
         healthSystem.SetHealthAmountMax(healthSystem.healthAmountMax + 4);
-        Debug.Log("HitMax" + enemyType.hitMax);
         enemyType.SethitMax(enemyType.hitMax + 2);
-        Debug.Log("HitMax" + enemyType.hitMax);
-        Debug.Log("HealthAmount: " + healthSystem.GetComponent<HealthSystem>().GetHealthAmount());
-        Debug.Log("HealthAmountMax: " + healthSystem.GetComponent<HealthSystem>().GetHealthAmountMax());
         transform.Find("pfHealthBar").GetComponent<HealthBar>().UpdateBar();
 
     }
