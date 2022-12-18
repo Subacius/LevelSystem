@@ -180,7 +180,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3567788997128075966}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -643,6 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3579295074703863534}
   - component: {fileID: 309106421711262346}
+  - component: {fileID: 4134167689703446692}
   m_Layer: 0
   m_Name: LevelWindow
   m_TagString: Untagged
@@ -687,6 +688,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelText: {fileID: 4946670593371801007}
   expierenceBarImage: {fileID: 2558579937206957999}
+--- !u!114 &4134167689703446692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651476800439354666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309f5c2845053874aaf028be2f5c7630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ID: 
+  m_childID: 
+  m_prefabID: LevelWindow
+  m_autoSetPrefabID: 1
+  m_saveTransform: 1
 --- !u!1 &9149060697168564804
 GameObject:
   m_ObjectHideFlags: 0

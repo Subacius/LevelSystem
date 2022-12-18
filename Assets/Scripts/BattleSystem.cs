@@ -105,37 +105,23 @@ public class BattleSystem : MonoBehaviour
         // player.SetLevelSystem(levelSystem);
 
 
-
+//veikia
 
         for ( int i = 0; i < playerList.Length; i++ ) {
 
-            // testArray.primeGameObject[i].transform.position = new Vector3 ( Random.Range(-2.5f, 2.5f), Random.Range(-4.2f, 4.2f), 0 );
             GameObject playerGo = Instantiate(playerList[i], playerBattleStation);
             playerList[i].transform.position = new Vector3 ( Random.Range(-2.5f, 2.5f), Random.Range(-4.2f, 4.2f), 0 ); 
-
-            // LevelSystem levelSystem = new LevelSystem();
-            // playerList[i].GetComponent<Player>().SetLevelSystem(levelSystem);
-            // // playerList[i].GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
-
-            // gamgamgam.GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
-
-            
-
-
-                    //     playerTransform = transform.Find("LevelWindowPlayer");
-                    //    playerTransform.GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
-
-            // playerTypeHolder = playerGo.GetComponent<PlayerTypeHolder>();
         }
 
 
         for ( int i = 0; i < enemyList.Length; i++ ) {
 
-            // testArray.primeGameObject[i].transform.position = new Vector3 ( Random.Range(-2.5f, 2.5f), Random.Range(-4.2f, 4.2f), 0 );
             GameObject enemyGo = Instantiate(enemyList[i], enemyBattleStation);
             enemyList[i].transform.position = new Vector3 ( Random.Range(-2.5f, 2.5f), Random.Range(-4.2f, 4.2f), 0 ); 
-            // playerTypeHolder = enemyGo.GetComponent<PlayerTypeHolder>();
+
         } 
+
+//veikia
 
         // // SaveLoadSystem saveLoadSystem = saveLoadSystem.GetComponent<SaveLoadSystem>();
         //     enemyManager_2 = FindObjectOfType<EnemyManager_2>();
@@ -333,7 +319,7 @@ public class BattleSystem : MonoBehaviour
 
         // if(playerBattleStation.GetComponentInChildren<HealthSystem>() != null) {
 
-        if(AddToArrayPlayer1.Length > 0 ||  AddToArrayPlayer2.Length > 0) {
+        if(AddToArrayPlayer1.Length > 0 ) {
             // state = BattleState.WON;
             // EndBattle();
             isDead = false;
@@ -352,6 +338,8 @@ public class BattleSystem : MonoBehaviour
     }
 
     private void EndBattle() {
+
+       
 
         // destroyAllEnemies = FindObjectOfType<DestroyAllEnemies>();
         // destroyAllEnemies.DeleteAllEnemyplz(); 

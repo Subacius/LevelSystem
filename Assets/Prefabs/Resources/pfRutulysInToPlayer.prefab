@@ -84,7 +84,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy1: {fileID: 11400000, guid: fe6fcc41107f9924e9409b4f2cb70f18, type: 2}
-  levelWindowsEnemy: {fileID: 0}
 --- !u!1 &7984466731212837108
 GameObject:
   m_ObjectHideFlags: 0

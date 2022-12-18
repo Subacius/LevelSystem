@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
         healthSystem.OnDead += HealthSystem_OnDied;
 
-        healthSystem.OnRemoveFromList += HealthSystem_OnRemoveFromList;
+        // healthSystem.OnRemoveFromList += HealthSystem_OnRemoveFromList;
 
         playerManagerAll = FindObjectOfType<PlayerManagerAll>();
 
@@ -82,21 +82,21 @@ public class Player : MonoBehaviour
 
     }
 
-    private void HealthSystem_OnRemoveFromList (object sender, EventArgs e) {
-        PlayerTypeListSO playerTypeList = Resources.Load<PlayerTypeListSO>(typeof(PlayerTypeListSO).Name);
+    // private void HealthSystem_OnRemoveFromList (object sender, EventArgs e) {
+    //     PlayerTypeListSO playerTypeList = Resources.Load<PlayerTypeListSO>(typeof(PlayerTypeListSO).Name);
 
-        pftestArray = GameObject.FindGameObjectWithTag("Army");
+    //     pftestArray = GameObject.FindGameObjectWithTag("Army");
 
-        PlayerManagerAll testArray = pftestArray.GetComponent<PlayerManagerAll>();
+    //     PlayerManagerAll testArray = pftestArray.GetComponent<PlayerManagerAll>();
     
-        testArray.primeGameObject.Remove(gameObject);
+    //     testArray.primeGameObject.Remove(gameObject);
 
-        playerManagerAll.RemovePlayerUnit(playerTypeList.list[0], 1);
-        // remove from Panel1
-        // playerPanelTxt.RemoveCounter();
+    //     playerManagerAll.RemovePlayerUnit(playerTypeList.list[0], 1);
+    //     // remove from Panel1
+    //     // playerPanelTxt.RemoveCounter();
 
 
-    }
+    // }
 
     public void SetLevelSystem(LevelSystem levelSystem) {
         this.levelSystem = levelSystem;

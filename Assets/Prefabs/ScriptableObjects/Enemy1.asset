@@ -15,4 +15,4 @@ MonoBehaviour:
   nameString: Enemy1
   prefab: {fileID: 1645385650458327215, guid: 11effa0bab755d34d8a9df595305d237, type: 3}
   healthAmountMax: 123
-  hitMax: 15
+  hitMax: 575

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+// using SaveLoadSystem;
+
+// [RequireComponent(typeof(SaveableEntity))]
 
 public class LevelSystem
 {
@@ -9,8 +12,8 @@ public class LevelSystem
     public event EventHandler OnLevelChanged;
 
     private static readonly int [] expieriencePerLevel = new [] {100, 150, 200 , 250 , 300 , 350 , 400 , 450, 500 , 600};
-    private int level;
-    private int experience;
+    [SerializeField] public int level;
+    [SerializeField] public int experience;
     // private int experienceToNextLevel;
 
     public LevelSystem() {
@@ -63,4 +66,67 @@ public class LevelSystem
     public bool IsMaxLevel (int level) {
         return level == expieriencePerLevel.Length - 1;
         }
+
+
+
+   [System.Serializable]
+    struct LevelWindowSystemData
+    {
+
+
+
+        public int level;
+
+        public int expierence;
+    }
+    
+    public object SaveState()
+    {
+        return new LevelWindowSystemData()
+        {
+
+            level = level,
+            expierence = experience
+            // level = levelWindowEnemy.GetComponent<LevelWindowEnemy>().levelSystem.level,
+            // expierence = levelWindowEnemy.GetComponent<LevelWindowEnemy>().levelSystem.experience,
+            // level = levelSystem.level,
+            // expierence = levelSystem.experience,
+            
+            // timePos = timePos
+        };
+        
+    }
+    public void LoadState(object state)
+    {
+        LevelWindowSystemData data = (LevelWindowSystemData)state;
+
+        level = data.level;
+        experience = data.expierence;
+
+        // levelWindowEnemy.GetComponent<LevelWindowEnemy>().levelSystem.level = data.level;
+        // levelWindowEnemy.GetComponent<LevelWindowEnemy>().levelSystem.experience = data.expierence;
+
+        // levelSystem.level = data.level;
+        // levelSystem.experience = data.expierence;
+        // timePos = data.timePos;
+    }
+
+    public bool NeedsToBeSaved()
+    {
+        return true;
+    }
+    public bool NeedsReinstantiation()
+    {
+        return true;
+    }
+
+    public void PostInstantiation(object state)
+    {
+        LevelWindowSystemData data = (LevelWindowSystemData)state;
+
+    }
+    public void GotAddedAsChild(GameObject obj, GameObject hisParent)
+    {
+
+    }
 }

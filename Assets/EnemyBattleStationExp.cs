@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,34 +9,33 @@ public class EnemyBattleStationExp : MonoBehaviour {
 
     [SerializeField] private GameObject [] allEnemiesSecond;
 
+    private EnemyBattleStation enemyBattleStation;
+    
+
+    private void Awake() {
+        // enemyBattleStation.GetComponent<EnemyBattleStation>();
+    }
+
     private void Start() {
 
-        if (allEnemies != null) {
-            allEnemies = GameObject.FindGameObjectsWithTag("Enemy1");
-        }
-        // if (allPlayersSecond != null) {
-        //     allPlayersSecond = GameObject.FindGameObjectsWithTag("Player2");
-        // }
+        // enemyBattleStation.GetComponent<EnemyBattleStation>().OnAddedEnemy += EnemyBattleStation_OnAddedEnemy;
 
-
-        if (allEnemies != null) {
-            foreach (GameObject go in allEnemies) {
-                LevelSystem levelSystem = new LevelSystem();
-                go.transform.Find("PfEnemyCanvas").transform.Find("LevelWindow").GetComponent<LevelWindowEnemy>().SetLevelSystem(levelSystem);
-                go.GetComponent<Enemy>().SetLevelSystem(levelSystem);
-            }
-
-        }
-
-        // if (allPlayersSecond != null) {
-        //     foreach (GameObject go in allPlayersSecond) {
+        // if (allEnemies != null) {
+        //     allEnemies = GameObject.FindGameObjectsWithTag("Enemy1");
+        //     foreach (GameObject go in allEnemies) {
         //         LevelSystem levelSystem = new LevelSystem();
-        //         go.transform.Find("PfPlayerCanvas").transform.Find("LevelWindowPlayer").GetComponent<LevelWindowPlay>().SetLevelSystem(levelSystem);
-        //         go.GetComponent<Player>().SetLevelSystem(levelSystem);
+        //         go.transform.Find("PfEnemyCanvas").transform.Find("LevelWindow").GetComponent<LevelWindowEnemy>().SetLevelSystem(levelSystem);
+        //         go.GetComponent<Enemy>().SetLevelSystem(levelSystem);
         //     }
-
         // }
 
+
+
+    }
+
+    private void EnemyBattleStation_OnAddedEnemy(object sender, EventArgs e)
+    {
+        LevelSystem levelSystem = new LevelSystem();
 
     }
 }
