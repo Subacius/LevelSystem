@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
 
     private void Start() {
-        enemyType = GetComponent<EnemyTypeHolder>().enemyType;
+        // enemyType = GetComponent<EnemyTypeHolder>().enemyType;
         healthSystem = GetComponent<HealthSystem>();
         weaponEnemy = GetComponent<WeaponEnemy>();
 
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         // Debug.Log(healthSystem.GetComponent<HealthSystem>().healthAmount);
         // int healthAmountMax = healthSystem.GetHealthAmount() + 4;
         healthSystem.SetHealthAmountMax(healthSystem.healthAmountMax + 4);
-        enemyType.SethitMax(enemyType.hitMax + 2);
+        // enemyType.SethitMax(enemyType.hitMax + 2);
         transform.Find("pfHealthBar").GetComponent<HealthBar>().UpdateBar();
 
     }

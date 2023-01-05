@@ -33,9 +33,6 @@ public class HealthSystem : MonoBehaviour, ISaveable
 
     // [SerializeField] private GameObject PfEnemyCanvas;
 
-    [SerializeField] private GameObject LevelWindowGo;
-
-    
     
     private int hitMax;
     private int hit;
@@ -76,6 +73,10 @@ public class HealthSystem : MonoBehaviour, ISaveable
         }
 
         
+    }
+
+    public void DamageToBtn() {
+        Damage(15);
     }
     public bool IsDead() {
         return healthAmount == 0;
