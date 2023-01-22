@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 643294777}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelWindowEnemyTest, Assembly-CSharp
         m_MethodName: AddExperience
         m_Mode: 3
@@ -493,17 +493,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &643294777 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1505856843217072607, guid: 35e263088223bf9499b0265a33bb29d2, type: 3}
-  m_PrefabInstance: {fileID: 1989679278}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4db2077313988ed418b7a0a1ef0685b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &958660322
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +638,7 @@ GameObject:
   - component: {fileID: 974068922}
   - component: {fileID: 974068921}
   - component: {fileID: 974068920}
+  - component: {fileID: 974068923}
   m_Layer: 5
   m_Name: DamageBtn
   m_TagString: Untagged
@@ -719,19 +709,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 974068921}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1989679279}
-        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
-        m_MethodName: DamageToBtn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &974068921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +748,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974068918}
   m_CullTransparentMesh: 1
+--- !u!114 &974068923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974068918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a112408f0095ae34da626632a31f2139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 974068920}
 --- !u!1 &1511621590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,16 +1445,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1670256639348525464, guid: 35e263088223bf9499b0265a33bb29d2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670256639348525464, guid: 35e263088223bf9499b0265a33bb29d2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e263088223bf9499b0265a33bb29d2, type: 3}
---- !u!114 &1989679279 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6737219128813295654, guid: 35e263088223bf9499b0265a33bb29d2, type: 3}
-  m_PrefabInstance: {fileID: 1989679278}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f5d90a7f2018f4e8cf2667508116c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -129,8 +129,8 @@ public class HealthSystem : MonoBehaviour, ISaveable
         // public float timePos;
 
 
-        public int level;
-        public int expierence;
+        // public int level;
+        // public int expierence;
     }
     
     public object SaveState()

@@ -24,9 +24,9 @@ public class WeaponEnemy : MonoBehaviour
     // Update is called once per frame
    public void Update()
     {
-        // if ( Input.GetButtonDown("Fire2")) {
-        //     Shoot();
-        // }
+        if ( Input.GetButtonDown("Fire2")) {
+            Shoot();
+        }
     }
 
     public void Shoot() {

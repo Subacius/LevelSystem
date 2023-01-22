@@ -19,7 +19,7 @@ public class HealthBarTest : MonoBehaviour {
     }
 
     private void Start() {
-        playerLevel.OnDamaged += HealthSystem_OnDamaged;
+        // playerLevel.OnDamaged += HealthSystem_OnDamaged;
 
         UpdateBar();
     }
@@ -40,7 +40,7 @@ public class HealthBarTest : MonoBehaviour {
 
 
     public void UpdateBar() {
-        barTransform.localScale = new Vector3(playerLevel.GetHealthAmountNormalized(), 1 ,1);
+        // barTransform.localScale = new Vector3(playerLevel.GetHealthAmountNormalized(), 1 ,1);
         // healthSystem.GetHealthAmount();
         // Debug.Log(healthSystem.GetHealthAmount());
 
